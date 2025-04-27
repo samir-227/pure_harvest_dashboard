@@ -1,0 +1,2 @@
+D:/projects/fruits_hub_dashboard-main/android/app/.cxx/Debug/5o3c1n6j/armeabi-v7a/CMakeFiles/edit_cache.dir
+D:/projects/fruits_hub_dashboard-main/android/app/.cxx/Debug/5o3c1n6j/armeabi-v7a/CMakeFiles/rebuild_cache.dir
