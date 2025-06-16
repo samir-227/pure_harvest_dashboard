@@ -5,7 +5,6 @@ import 'package:fruit_hub_dashboard/features/orders/presentation/views/widgets/o
 
 import '../../../../../core/enums/order_enum.dart';
 
-
 class OrderItemWidget extends StatelessWidget {
   final OrderEntity orderModel;
 
@@ -59,7 +58,7 @@ class OrderItemWidget extends StatelessWidget {
 
             // User ID
             Text(
-              'User ID: ${orderModel.uId}',
+              'User ID: ${orderModel.uid}',
               style: const TextStyle(fontSize: 14, color: Colors.grey),
             ),
             const SizedBox(height: 8),

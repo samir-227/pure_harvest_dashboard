@@ -18,16 +18,16 @@ class OrderProductModel {
     return OrderProductModel(
       name: json['name'],
       code: json['code'],
-      imageUrl: json['imageUrl'],
-      price: json['price'],
-      quantity: json['quantity'],
+      imageUrl: json['image'],
+      price: double.parse(json['price']),
+      quantity: int.parse(json['quantity']), // json['quantity'],
     );
   }
   toJson() {
     return {
       'name': name,
       'code': code,
-      'imageUrl': imageUrl,
+      'image': imageUrl,
       'price': price,
       'quantity': quantity,
     };

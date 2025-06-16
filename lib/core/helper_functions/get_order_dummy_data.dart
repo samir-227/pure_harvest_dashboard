@@ -50,10 +50,10 @@ OrderEntity getDummyOrder() {
 
   // Create and return the OrderModel
   return OrderEntity(
-    orderID: '12345',
+    orderId: '12345',
     totalPrice: totalPrice,
     status: OrderStatusEnum.pending,
-    uId: 'user123',
+    uid: 'user123',
     shippingAddressModel: shippingAddress,
     orderProducts: orderProducts,
     paymentMethod: 'Cash',

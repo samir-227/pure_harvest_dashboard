@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -26,7 +25,7 @@ class OrderActionButtons extends StatelessWidget {
             onPressed: () {
               context.read<UpdateOrderCubit>().updateOrder(
                   status: OrderStatusEnum.accepted,
-                  orderID: orderEntity.orderID);
+                  orderID: orderEntity.orderId);
             },
             child: const Text('Accept'),
           ),
@@ -44,7 +43,7 @@ class OrderActionButtons extends StatelessWidget {
             onPressed: () {
               context.read<UpdateOrderCubit>().updateOrder(
                   status: OrderStatusEnum.delivered,
-                  orderID: orderEntity.orderID);
+                  orderID: orderEntity.orderId);
             },
             child: const Text('Delivered'),
           ),

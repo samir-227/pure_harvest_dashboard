@@ -5,48 +5,50 @@ import '../../domain/entities/data/models/order_entity.dart';
 import 'order_product_model.dart';
 
 class OrderModel {
-  final double totalPrice;
-  final String uId;
   final ShippingAddressModel shippingAddressModel;
   final List<OrderProductModel> orderProducts;
+  final double totalPrice;
+  final String uid;
   final String paymentMethod;
   final String? status;
-  final String orderID;
-  OrderModel(
-      {required this.totalPrice,
-      required this.uId,
-      required this.status,
-      required this.orderID,
-      required this.shippingAddressModel,
-      required this.orderProducts,
-      required this.paymentMethod});
+  final String orderId;
+
+  OrderModel({
+    required this.status,
+    required this.orderId,
+    required this.shippingAddressModel,
+    required this.orderProducts,
+    required this.totalPrice,
+    required this.uid,
+    required this.paymentMethod,
+  });
 
   factory OrderModel.fromJson(Map<String, dynamic> json) => OrderModel(
         totalPrice: json['totalPrice'],
-        uId: json['uId'],
+        uid: json['uid'],
         status: json['status'],
-        orderID: json['orderId'],
+        orderId: json['orderId'],
         shippingAddressModel:
-            ShippingAddressModel.fromJson(json['shippingAddressModel']),
+            ShippingAddressModel.fromJson(json['shippingAddress']),
         orderProducts: List<OrderProductModel>.from(
             json['orderProducts'].map((e) => OrderProductModel.fromJson(e))),
         paymentMethod: json['paymentMethod'],
       );
   toJson() => {
         'totalPrice': totalPrice,
-        'uId': uId,
+        'uid': uid,
         'status': 'pending',
         'date': DateTime.now().toString(),
-        'shippingAddressModel': shippingAddressModel.toJson(),
+        'shippingAddress': shippingAddressModel.toJson(),
         'orderProducts': orderProducts.map((e) => e.toJson()).toList(),
         'paymentMethod': paymentMethod,
       };
 
   toEntity() => OrderEntity(
-        orderID: orderID,
+        orderId: orderId,
         totalPrice: totalPrice,
         status: fetchEnum(),
-        uId: uId,
+        uid: uid,
         shippingAddressModel: shippingAddressModel.toEntity(),
         orderProducts: orderProducts.map((e) => e.toEntity()).toList(),
         paymentMethod: paymentMethod,

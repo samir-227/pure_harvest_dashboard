@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:dartz/dartz.dart';
 import 'package:fruit_hub_dashboard/core/enums/order_enum.dart';
 import 'package:fruit_hub_dashboard/core/errors/failures.dart';
@@ -18,9 +20,10 @@ class OrdersRepoImpl implements OrdersRepo {
     try {
       await for (var data
           in _dataService.streamData(path: BackendEndpoint.getOrders)) {
-        List<OrderEntity> orders = (data as List<dynamic>)
-            .map<OrderEntity>((e) => OrderModel.fromJson(e).toEntity())
-            .toList();
+        List<OrderEntity> orders =
+            (data as List<dynamic>).map<OrderEntity>((e) {
+          return OrderModel.fromJson(e).toEntity();
+        }).toList();
         yield Right(orders);
       }
     } catch (e) {
