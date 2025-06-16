@@ -27,10 +27,11 @@ A modern and responsive admin dashboard built with **Flutter app**, designed to 
 lib/
 ├── core/
 ├── features/
+│   ├── dashboard/
 │   ├── products/
-│   ├── orders/
-│   └── users/
+│   └── orders/
 ├── services/
+├── assets/
 └── main.dart
 ```
 
